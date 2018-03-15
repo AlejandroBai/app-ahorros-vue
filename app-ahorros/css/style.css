@@ -1,0 +1,489 @@
+/**********************************************
+*** GENERAL
+**********************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .3s;
+}
+
+body {
+    background: #f0f0f0;
+    color: #555;
+    font-family: Open Sans;
+    font-size: 1rem;
+}
+
+
+/**********************************************
+*** PARTE DE LA CABECERA
+**********************************************/
+
+.cabecera {
+    padding: 1rem;
+}
+
+.presupuesto {
+    text-align: center;
+}
+
+.presupuesto__contenedor {
+    padding: 1rem;
+}
+
+.presupuesto__titulo {
+    font-weight: 100;
+}
+
+.presupuesto__valor {
+    padding: 1rem;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.presupuesto__ingresos,
+.presupuesto__gastos {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.presupuesto__ingresos {
+    background-color: #1abc9c;
+}
+
+.presupuesto__gastos {
+    margin-bottom: 2rem;
+    background-color: #e74c3c;
+}
+
+.presupuesto__ingresos--texto,
+.presupuesto__gastos--texto {
+    font-size: .9rem;
+}
+
+.presupuesto__gastos--porcentaje {
+    margin-left: 1rem;
+    font-size: 12px;
+    background-color: white;
+    opacity: .8;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.presupuesto__ingresos--porcentaje {
+    color: #1abc9c;
+}
+
+.presupuesto__gastos--porcentaje {
+    color: #e74c3c;
+}
+
+.numeros {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.advertencia {
+    visibility: hidden;
+    color: #e74c3c;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.mostrar {
+    visibility: visible;
+    animation: fadeIn .5s linear;
+}
+
+.ocultar {
+    visibility: hidden;
+    animation: fadeOut .5s linear;
+}
+
+
+/**********************************************
+*** PARTE DE LA BARRA AÑADIR
+**********************************************/
+
+.anadir {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    background: white;
+    padding: 1rem;
+}
+
+.anadir__contenedor {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.anadir__radios {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.anadir__descripcion,
+.anadir__valor {
+    border: solid 1px #f1f1f1;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+    .anadir__descripcion,
+    .anadir__valor,
+    .anadir__radios {
+        margin-bottom: 1rem;
+    }
+}
+
+.anadir__descripcion:focus,
+.anadir__valor:focus {
+    outline: none;
+    outline-color:  #1abc9c;
+    outline-width: 1px;
+    border: solid 1px #1abc9c;
+}
+
+.anadir__btn {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: #1abc9c;
+}
+
+.anadir__btn:hover {
+    color: #1abc9c;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.anadir__btn:focus,
+.anadir__btn:active {
+    outline: none;
+    border: none;
+    border-style: none;
+}
+
+.anadir__btn:hover .ion-ios-checkmark-outline:before {
+    content: "\f3ff";
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.8rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+input[type="radio"]:hover+label>i.ion-ios-plus-outline {
+    color: #1abc9c;
+    transform: scale(1.2);
+}
+
+input[type="radio"]:hover+label>i.ion-ios-minus-outline {
+    color: #e74c3c;
+    transform: scale(1.2);
+}
+
+input[type="radio"]:checked+label>i.ion-ios-plus-outline:before {
+    content: "\f48b";
+    color: #1abc9c;
+}
+
+input[type="radio"]:checked+label>i.ion-ios-minus-outline:before {
+    content: "\f464";
+    color: #e74c3c;
+}
+
+
+/**********************************************
+*** PARTE DE LAS LISTAS
+**********************************************/
+
+.listas {
+    padding-bottom: 2rem;
+}
+
+.ingresos__titulo,
+.gastos__titulo {
+    padding: 2rem 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.gastos__titulo {
+    color: #e74c3c;
+}
+
+.ingresos__titulo {
+    color: #1abc9c;
+}
+
+.ingresos__lista__item,
+.gastos__lista__item {
+    border-bottom: solid 2px #f0f0f0;
+    color: #555;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ingresos__lista__item:hover,
+.gastos__lista__item:hover {
+    background-color: transparent; 
+}
+
+.item__description {
+    padding: 1rem;
+}
+
+.numeros {
+    justify-content: space-between;
+}
+.item__numeros {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gastos__lista__item .item__numeros {
+    color: #e74c3c;
+}
+
+.ingresos__lista__item .item__numeros {
+    color: #1abc9c;
+}
+
+.item__numeros--porcentaje {
+    margin-left: 1rem;
+    font-size: 12px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.item__borrar--btn {
+    display: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    font-weight: 100;
+    color: #e74c3c;
+}
+
+.item__borrar--btn:hover {
+    transition: .1s;
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.item__borrar--btn:focus {
+    outline: none;
+}
+
+.item__borrar--btn:focus .ion-ios-close-outline:before,
+.item__borrar--btn:hover .ion-ios-close-outline:before {
+    content: "\f406";
+}
+
+.gastos__lista__item:hover .item__borrar--btn,
+.ingresos__lista__item:hover .item__borrar--btn {
+    display: block;
+}
+
+.gastos__lista__item:hover .item__numeros--valor,
+.ingresos__lista__item:hover .item__numeros--valor,
+.gastos__lista__item:hover .item__numeros--porcentaje {
+    transform: translateX(-1rem);
+}
+
+
+/**********************************************
+*** BOTÓN SWITCH INTERFAZ
+**********************************************/
+
+
+/* The switch - the box around the slider */
+
+.switch {
+    position: fixed;
+    top: 11rem;
+    right: 14rem;
+    width: 60px;
+    height: 34px;
+}
+
+.switch-texto {
+    display: block;
+    position: relative;
+    width: 60px;
+    font-size: .7rem;
+    top: -25px;
+    text-align: center;
+}
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    display: none;
+}
+
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .6s;
+}
+
+input:checked+.slider {
+    background-color: #1abc9c;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+    label.switch {
+        top: auto;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+
+/**********************************************
+*** INTERFAZ OSCURA
+**********************************************/
+
+.claro {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.claro1 {
+    background: white;
+}
+
+.oscuro {
+    background: #212121;
+    color: #aaa;
+    border-color: #212121;
+}
+
+.oscuro1 {
+    background: #333;
+    border-color: #212121;
+    color: #aaa;
+}
+
+.oscuro-input {
+    background: #212121;
+    color: #aaa;
+    border-color: #212121;
+    border-radius: 50px;
+}
+
+/**********************************************
+*** FOCUS ROJO
+**********************************************/
+
+.focus-rojo:focus {
+    border-color: #e74c3c;
+}
+
+.anadir__btn-rojo {
+    color: #e74c3c;
+}
+
+.anadir__btn-rojo:hover {
+    color: #e74c3c;
+    cursor: pointer;
+    transform: scale(1.2);
+}

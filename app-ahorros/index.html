@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap-grid.css">
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <title>App ingresos y gastos</title>
+</head>
+
+<body>
+    <div class="container-fluid cabecera">
+        <div class="row presupuesto">
+            <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 presupuesto__contenedor">
+                <div class="presupuesto__titulo">
+                    <span>
+                        Fondos disponibles en
+                        <span class="presupuesto__titulo--fecha"></span>:
+                    </span>
+                </div>
+                <div class="presupuesto__valor">
+                    <span>+ 2,345.64</span>
+                </div>
+                <div class="presupuesto__ingresos">
+                    <span class="presupuesto__ingresos--texto">Ingresos</span>
+                    <div class="numeros">
+                        <span class="presupuesto__ingresos--valor">+ 4,300.00</span>
+                    </div>
+                </div>
+                <div class="presupuesto__gastos">
+                    <span class="presupuesto__gastos--texto">Gastos</span>
+                    <div class="numeros">
+                        <span class="presupuesto__gastos--valor">- 1,954.36</span>
+                        <span class="presupuesto__gastos--porcentaje">&nbsp;</span>
+                    </div>
+                </div>
+                <p class="advertencia">Rellena todos los campos, por favor</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid barra-anadir">
+        <div class="row anadir">
+            <div class="col-lg-8 offset-lg-2 col-md-6 offset-md-3 anadir__contenedor">
+                <div class="col-lg-2 col-sm-12 anadir__radios">
+                    <input type="radio" name="tipo" class="anadir__radio--ingreso" id="ingreso" value="ing" checked>
+                    <label for="ingreso">
+                        <i class="ion-ios-plus-outline"></i>
+                    </label>
+                    <input type="radio" name="tipo" class="anadir__radio--gasto" id="gasto" value="gas">
+                    <label for="gasto">
+                        <i class="ion-ios-minus-outline"></i>
+                    </label>
+                </div>
+                <input type="text" class="col-lg-4 col-sm-12 anadir__descripcion" placeholder="Añade una descripción">
+                <input type="number" class="col-lg-4 col-sm-12 anadir__valor" placeholder="Valor">
+                <button class="col-lg-1 col-sm-12 anadir__btn">
+                    <i class="ion-ios-checkmark-outline"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid listas">
+        <div class="row">
+            <div class="col-lg-5 offset-lg-1 col-md-6 ingresos__contenedor">
+                <h2 class="ingresos__titulo">
+                    Ingresos
+                </h2>
+                <div class="ingresos__lista">
+                    <!-- <div class="ingresos__lista__item" id="ingreso-0">
+                        <span class="item__description">
+                            Movida guapa
+                        </span>
+                        <div class="item__numeros">
+                            <span class="item__numeros--valor">- 1,954.36</span>
+                            <span class="item__numeros--borrar">
+                                <button class="item__borrar--btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 gastos">
+                <h2 class="gastos__titulo">
+                    Gastos
+                </h2>
+                <div class="gastos__lista">
+                    <!-- <div class="gastos__lista__item" id="gasto-0">
+                        <span class="item__description">
+                            Movida no tan guapa
+                        </span>
+                        <div class="item__numeros">
+                            <span class="item__numeros--valor">- 1,154.36</span>
+                            <div class="item__numeros--porcentaje">21%</div>
+                            <span class="item__numeros--borrar">
+                                <button class="item__borrar--btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <label class="switch">
+        <span class="switch-texto">UI Oscura</span>
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <script type="text/javascript" src="./js/app.js"></script>
+</body>
+
+</html>
